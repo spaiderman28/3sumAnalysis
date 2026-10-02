@@ -9,8 +9,13 @@ public class ThreeSumFast {
 
     public static int count(int[] a) {
         int count = 0;
-        //TODO: Finish THreeSumFast by first using Array.sort then use BinarySearch to help find the thrid number
-
+        //TODO: Finish THreeSumFast by first using  Array.sort then use BinarySearch to help find the third number
+        Arrays.sort(a);
+        for (int i = 0; i <a.length; ++i) {
+            for (int j = i+1; j < a.length; ++j)
+                if (BinarySearch.indexOf(a, -a[i]-a[j]) > j)
+                    ++count;
+        }
         return count;
 
     }
