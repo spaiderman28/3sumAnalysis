@@ -8,8 +8,12 @@ public class ThreeSumInsertionSort {
 
     public static int count(int[] a) {
         int count = 0;
-        //TODO: Finish ThreeSumInsertionSort using insertionsort instead of array sort.
-
+        insertionSort(a);
+        for (int i = 0; i <a.length; ++i) {
+            for (int j = i+1; j < a.length; ++j)
+                if (BinarySearch.indexOf(a, -a[i]-a[j]) > j)
+                    ++count;
+        }
         return count;
     }
 
